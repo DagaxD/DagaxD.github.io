@@ -701,15 +701,14 @@
                                 <div class="controls">
                                     <input type="text" class="form-control"
                                            placeholder="Imię i nazwisko" id="name" required
-                                           data-validation-required-message="Proszę wpisz swoje imię i nazwisko"/>
+                                           name="name"/>
                                 </div>
                             </div>
                             <br/>
                             <div class="control-group">
                                 <div class="controls">
                                     <input type="email" class="form-control" placeholder="Email"
-                                           id="email" required
-                                           data-validation-required-message="Proszę wpisz swój e-mail"/>
+                                           id="email" name="email" required/>
                                 </div>
                             </div>
                             <br/>
@@ -717,7 +716,7 @@
                                 <div class="controls">
      <textarea rows="10" cols="100" class="form-control"
                placeholder="Wiadomość" id="message"
-               style="resize:none" name="message"></textarea>
+               style="resize:none" name="message" required></textarea>
                                 </div>
                             </div>
                             <div id="success"></div>
