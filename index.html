@@ -146,7 +146,7 @@
 
             <div class="col-lg-6">
                 <br/>
-                <b>Poszukuję pracy jako:</b><br/> Web Developer
+                <b>Poszukuję pracy jako:</b><br/> Junior Web Developer
                 <hr>
                 <b>Data urodzenia:</b> <br/>03.02.1993<br/>
                 <b>Miejsce zamieszkania: </b> <br/>Szczecin<br/>
@@ -259,54 +259,151 @@
 
         <div class="row">
             <div class="col-lg-12">
+
                 <script>
-
-                    $(function () {
-
-                        var $progressBar = $('.progress-bar');
-
-                        var progress = 0;      // initial value of your progress bar
-                        var timeout = 10;      // number of milliseconds between each frame
-                        var increment = .5;    // increment for each frame
-                        var maxprogress = 60; // when to leave stop running the animation
-
-                        function animate() {
-                            setTimeout(function () {
-                                progress += increment;
-                                $progressBar.text(progress + "%");
-
-                                if (progress < maxprogress) {
-                                    $progressBar.css('width', progress + "%");
-                                    animate();
-                                }
-                            }, timeout);
-                        };
-                        animate();
-                    });
-
+                    function move() {
+                        var elem = document.getElementById("myBar");
+                        var width = 1;
+                        var id = setInterval(frame, 10);
+                        function frame() {
+                            if (width >= 60) {
+                                clearInterval(id);
+                            } else {
+                                width++;
+                                elem.style.width = width + '%';
+                                elem.innerHTML = width * 1  + '%';
+                            }
+                        }
+                    }
                 </script>
 
+
+
                 HTML
-                <div class="progress progress-bar" style="width:0%">0%</div>
+                <div id="myProgress">
+                    <div id="myBar" class="myBar progress-bar-striped progress-bar-animated">60%</div>
+                </div>
+                <br>
+
+
+
+
+
+
+
+                <script>
+                    function move1() {
+                        var elem = document.getElementById("myBar1");
+                        var width = 1;
+                        var id = setInterval(frame, 10);
+                        function frame() {
+                            if (width >= 50) {
+                                clearInterval(id);
+                            } else {
+                                width++;
+                                elem.style.width = width + '%';
+                                elem.innerHTML = width * 1  + '%';
+                            }
+                        }
+                    }
+                </script>
+
                 CSS
-                <div class="progress progress-bar" style="width:0%">0%</div>
+                <div id="myProgress">
+                    <div id="myBar1" class="myBar progress-bar-striped progress-bar-animated">50%</div>
+                </div>
+                <br>
+
+
+
+
+
+
+                <script>
+                    function move2() {
+                        var elem = document.getElementById("myBar2");
+                        var width = 1;
+                        var id = setInterval(frame, 10);
+                        function frame() {
+                            if (width >= 30) {
+                                clearInterval(id);
+                            } else {
+                                width++;
+                                elem.style.width = width + '%';
+                                elem.innerHTML = width * 1  + '%';
+                            }
+                        }
+                    }
+                </script>
                 PHP
-                <div class="progress progress-bar" style="width:0%">0%</div>
+                <div id="myProgress">
+                    <div id="myBar2" class="myBar progress-bar-striped progress-bar-animated" >30%</div>
+                </div>
+                <br>
+
+
+
+
+
+                <script>
+                    function move3() {
+                        var elem = document.getElementById("myBar3");
+                        var width = 1;
+                        var id = setInterval(frame, 10);
+                        function frame() {
+                            if (width >= 40) {
+                                clearInterval(id);
+                            } else {
+                                width++;
+                                elem.style.width = width + '%';
+                                elem.innerHTML = width * 1  + '%';
+                            }
+                        }
+                    }
+                </script>
                 BOOTSTRAP
-                <div class="progress progress-bar" style="width:0%">0%</div>
+                <div id="myProgress">
+                    <div id="myBar3" class="myBar progress-bar-striped progress-bar-animated">40%</div>
+                </div>
+                <br>
+
+
+
+
+
+                <script>
+                    function move4() {
+                        var elem = document.getElementById("myBar4");
+                        var width = 1;
+                        var id = setInterval(frame, 10);
+                        function frame() {
+                            if (width >= 20) {
+                                clearInterval(id);
+                            } else {
+                                width++;
+                                elem.style.width = width + '%';
+                                elem.innerHTML = width * 1  + '%';
+                            }
+                        }
+                    }
+                </script>
                 JQUERY
-                <div class="progress progress-bar" style="width:0%">0%</div>
+                <div id="myProgress">
+                    <div id="myBar4" class="myBar progress-bar-striped progress-bar-animated">20%</div>
+                </div>
+                <br>
+                <button onclick="move4();move();move1();move2();move3()">Sprawdź</button>
             </div>
             <div class="col-lg-6">
                 <h4><span class="fab fa-weixin" aria-hidden="true"></span> Języki</h4>
                 <p>Język angielski
-                <div class="progress">
-                    <div class="progress-bar" style="width:67%">B2</div>
+                <div class="progress jezyk">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated jezykbar" style="width:67%">B2</div>
                 </div>
                 <br>
                 Język niemiecki
-                <div class="progress">
-                    <div class="progress-bar" style="width:34%">A2</div>
+                <div class="progress jezyk">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated jezykbar" style="width:34%">A2</div>
                 </div>
                 </p></div>
             <div class="col-lg-6">
