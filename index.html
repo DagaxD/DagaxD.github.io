@@ -14,7 +14,57 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
     <script src="js/jquery.timelinr-0.9.7.js"></script>
+    <script src="js/scroll.js"></script>
+
     <script>
+
+        function isScrolledIntoView($elem) {
+            var $window = $(window);
+            var docViewTop = $window.scrollTop();
+            var docViewBottom = docViewTop + $window.height();
+
+            var elemTop = $elem.offset().top;
+            var elemBottom = elemTop + $elem.height();
+
+            return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+        }
+
+function checkIfProgressBarsAreVisible(){
+    if (isScrolledIntoView($("#myBar")) && !window.moveStarted) {
+        move();
+    }
+    if (isScrolledIntoView($("#myBar1")) && !window.moveStarted1) {
+        move1();
+    }
+    if (isScrolledIntoView($("#myBar2")) && !window.moveStarted2) {
+        move2();
+    }
+    if (isScrolledIntoView($("#myBar3")) && !window.moveStarted3) {
+        move3();
+    }
+    if (isScrolledIntoView($("#myBar4")) && !window.moveStarted4) {
+        move4();
+    }
+    if (isScrolledIntoView($("#myBar5")) && !window.moveStarted5) {
+        move5();
+    }
+    if (isScrolledIntoView($("#myBar6")) && !window.moveStarted6) {
+        move6();
+    }
+    if (isScrolledIntoView($("#myBar7")) && !window.moveStarted7) {
+        move7();
+    }
+}
+
+
+        $( document ).ready(function() {
+           checkIfProgressBarsAreVisible();
+            $(document).on("scroll", function () {
+                checkIfProgressBarsAreVisible();
+
+            });
+        });
+
         $(function () {
             $().timelinr({
                 autoPlay: 'true',
@@ -67,7 +117,7 @@
                     Doświadczenie</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#umiejetnosci" onclick="move4();move();move1();move2();move3();move5();move6(); move7();"><span class="fa fa-wrench" aria-hidden="true"></span>
+                <a class="nav-link" href="#umiejetnosci"><span class="fa fa-wrench" aria-hidden="true"></span>
                     Umiejętności</a>
             </li>
             <li class="nav-item">
@@ -252,16 +302,17 @@
 
     <div id="umiejetnosci" >
 
-        <h2 style="text-align: center;margin-top:270px; margin-bottom:40px;">
+        <h3 style="text-align: center;margin-top:270px; margin-bottom:40px;">
             <span class="fas fa-wrench" aria-hidden="true"></span>
             Umiejętności
-        </h2>
+        </h3>
 
         <div class="row">
             <div class="col-lg-12">
 
                 <script>
                     function move() {
+                        window.moveStarted = 1;
                         var elem = document.getElementById("myBar");
                         var width = 1;
                         var id = setInterval(frame, 10);
@@ -290,6 +341,7 @@
 
                 <script>
                     function move1() {
+                        window.moveStarted1 = 1;
                         var elem = document.getElementById("myBar1");
                         var width = 1;
                         var id = setInterval(frame, 10);
@@ -314,6 +366,7 @@
 
                 <script>
                     function move2() {
+                        window.moveStarted2 = 1;
                         var elem = document.getElementById("myBar2");
                         var width = 1;
                         var id = setInterval(frame, 10);
@@ -341,6 +394,7 @@
 
                 <script>
                     function move3() {
+                        window.moveStarted3 = 1;
                         var elem = document.getElementById("myBar3");
                         var width = 1;
                         var id = setInterval(frame, 10);
@@ -368,6 +422,7 @@
 
                 <script>
                     function move4() {
+                        window.moveStarted4 = 1;
                         var elem = document.getElementById("myBar4");
                         var width = 1;
                         var id = setInterval(frame, 10);
@@ -391,6 +446,7 @@
 
                 <script>
                     function move7() {
+                        window.moveStarted7 = 1;
                         var elem = document.getElementById("myBar7");
                         var width = 1;
                         var id = setInterval(frame, 10);
@@ -427,6 +483,7 @@
 
                     <script>
                         function move5() {
+                            window.moveStarted5 = 1;
                             var elem = document.getElementById("myBar5");
                             var width = 1;
                             var id = setInterval(frame, 10);
@@ -451,6 +508,7 @@
 
             <script>
                 function move6() {
+                    window.moveStarted6 = 1;
                     var elem = document.getElementById("myBar6");
                     var width = 1;
                     var id = setInterval(frame, 10);
@@ -467,11 +525,10 @@
             </script>
                 Język niemiecki
             <div class="myProgress">
-                <div id="myBar6" class="myBar progress-bar-striped progress-bar-animated">A2</div>
+                <div id="myBar6" class="myBar">A2</div>
             </div>
 
 <br/>
-                <button onclick="move4();move();move1();move2();move3();move5();move6(); move7();">Sprawdź</button>
             </div>
 
 
@@ -519,11 +576,11 @@
 
     </div>
 
-    <div id="publikacje">
+    <div class="publikacje" id="publikacje">
         <h3 style="text-align: center;margin-top:100px;padding-bottom:20px;"><span class="fas fa-quote-left" aria-hidden="true"></span> Publikacje
         </h3>
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-6 reveal">
                 <b>2016</b>
                 <hr>
                 Poziomy rozumienia pojęć matematycznych uczniów w procesie fotoedukacji / Zeszyt Naukowy Zakładu
@@ -531,7 +588,7 @@
                 X Międzynarodowa Konferencja Naukowa Dydaktyków Matematyki z cyklu: „Matematyka – nasza niedostrzegalna
                 kultura”
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-6 reveal">
                 <b>2015</b>
                 <hr>
                 Didactica Mathematicae 37 (2015) / Polskie Towarzystwo Matematyczne: X International Scientific
@@ -792,7 +849,7 @@
     <div id="hobby">
         <h3 style="text-align: center; margin-top:100px; margin-bottom:40px;"><span class="fas fa-gamepad" aria-hidden="true"></span> Hobby
         </h3>
-        <div class="row">
+        <div class="row reveal">
             <div class="col-lg-1"></div>
             <div class="col-lg-2"><i class="fas fa-compact-disc" style="font-size:100px;"></i><h6 class="top-margin">Muzyka</h6>
                 <hr>
@@ -911,11 +968,20 @@
 <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
 <script>
     window.sr = ScrollReveal();
-    sr.reveal('myProgress', {
+    sr.reveal('publikacje', {
         reset: true,
         delay: 300,
-
+        distance: 0
     });
+    sr.reveal('h3', {
+        reset: true,
+        delay: 300
+    });
+    sr.reveal('.reveal', {
+        reset: true,
+        delay: 300
+    });
+
 
 </script>
 </body>

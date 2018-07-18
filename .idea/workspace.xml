@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="35f96de1-c22e-43a0-9d1b-955ef77d6f0a" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/js/scroll.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,32 +36,14 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="913" column="25" selection-start-line="913" selection-start-column="25" selection-end-line="913" selection-end-column="25" />
+            <state relative-caret-position="68">
+              <caret line="52" column="5" lean-forward="true" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
               <folding>
+                <element signature="n#style#0;n#h2#0;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#0;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#2;n#div#0;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Desktop/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="baaar.html" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Desktop/baaar.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="418" lean-forward="true" selection-start-line="418" selection-end-line="418" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#10;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h3#0;n#div#5;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h3#0;n#div#8;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -72,6 +56,7 @@
       <list>
         <option value="HTML File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -85,8 +70,13 @@
       <find>scri</find>
       <find>bar</find>
       <find>progre</find>
-      <find>umiej</find>
       <find>progres</find>
+      <find>publik</find>
+      <find>umiej</find>
+      <find>publ</find>
+      <find>publi</find>
+      <find>hobb</find>
+      <find>mov</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -102,6 +92,7 @@
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$USER_HOME$/Desktop/baaar.html" />
         <option value="$PROJECT_DIR$/style.css" />
+        <option value="$PROJECT_DIR$/js/scroll.js" />
         <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
@@ -137,8 +128,13 @@
         <subPane>
           <expand>
             <path>
-              <item name="cv" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cv" type="462c0819:PsiDirectoryNode" />
+              <item name="DagaxD.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DagaxD.github.io" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DagaxD.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DagaxD.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -184,18 +180,18 @@
       <workItem from="1531381345710" duration="3260000" />
       <workItem from="1531390847041" duration="94584000" />
       <workItem from="1531689583170" duration="206000" />
-      <workItem from="1531778329946" duration="11726000" />
+      <workItem from="1531778329946" duration="15735000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="109776000" />
+    <option name="totallyTimeSpent" value="113785000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="94" y="28" width="1412" height="792" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24964234" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24964234" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -204,7 +200,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3298969" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3298969" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3298969" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -282,13 +278,6 @@
     <entry file="file://$PROJECT_DIR$/../index.html" />
     <entry file="file://$PROJECT_DIR$/../creative.css" />
     <entry file="file://$PROJECT_DIR$/index.php" />
-    <entry file="file://$USER_HOME$/Desktop/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Desktop/baaar.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -306,13 +295,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/scroll.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="913" column="25" selection-start-line="913" selection-start-column="25" selection-end-line="913" selection-end-column="25" />
+        <state relative-caret-position="68">
+          <caret line="52" column="5" lean-forward="true" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
           <folding>
+            <element signature="n#style#0;n#h2#0;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#div#0;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h3#0;n#div#5;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h3#0;n#div#8;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
