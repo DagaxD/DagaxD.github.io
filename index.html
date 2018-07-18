@@ -67,7 +67,7 @@
                     Doświadczenie</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#umiejetnosci"><span class="fa fa-wrench" aria-hidden="true"></span>
+                <a class="nav-link" href="#umiejetnosci" onclick="move4();move();move1();move2();move3();move5();move6(); move7();"><span class="fa fa-wrench" aria-hidden="true"></span>
                     Umiejętności</a>
             </li>
             <li class="nav-item">
@@ -250,7 +250,7 @@
         <div class="parallax"></div>
     </div>
 
-    <div id="umiejetnosci">
+    <div id="umiejetnosci" >
 
         <h2 style="text-align: center;margin-top:270px; margin-bottom:40px;">
             <span class="fas fa-wrench" aria-hidden="true"></span>
@@ -279,14 +279,11 @@
 
 
 
-                HTML
-                <div id="myProgress">
+                <i class="fas fa-code"></i> HTML
+                <div class="myProgress">
                     <div id="myBar" class="myBar progress-bar-striped progress-bar-animated">60%</div>
                 </div>
                 <br>
-
-
-
 
 
 
@@ -308,15 +305,11 @@
                     }
                 </script>
 
-                CSS
-                <div id="myProgress">
+                <i class="fab fa-css3-alt"></i>CSS
+                <div class="myProgress">
                     <div id="myBar1" class="myBar progress-bar-striped progress-bar-animated">50%</div>
                 </div>
                 <br>
-
-
-
-
 
 
                 <script>
@@ -335,8 +328,9 @@
                         }
                     }
                 </script>
-                PHP
-                <div id="myProgress">
+
+                <i class="fab fa-php"></i> PHP
+                <div class="myProgress">
                     <div id="myBar2" class="myBar progress-bar-striped progress-bar-animated" >30%</div>
                 </div>
                 <br>
@@ -361,8 +355,9 @@
                         }
                     }
                 </script>
-                BOOTSTRAP
-                <div id="myProgress">
+
+                <i class="fas fa-bold"></i> BOOTSTRAP
+                <div class="myProgress">
                     <div id="myBar3" class="myBar progress-bar-striped progress-bar-animated">40%</div>
                 </div>
                 <br>
@@ -387,27 +382,101 @@
                         }
                     }
                 </script>
-                JQUERY
-                <div id="myProgress">
+                <i class="fab fa-quora"></i> JQUERY
+                <div class="myProgress">
                     <div id="myBar4" class="myBar progress-bar-striped progress-bar-animated">20%</div>
                 </div>
                 <br>
-                <button onclick="move4();move();move1();move2();move3()">Sprawdź</button>
+
+
+                <script>
+                    function move7() {
+                        var elem = document.getElementById("myBar7");
+                        var width = 1;
+                        var id = setInterval(frame, 10);
+                        function frame() {
+                            if (width >= 30) {
+                                clearInterval(id);
+                            } else {
+                                width++;
+                                elem.style.width = width + '%';
+                                elem.innerHTML = width * 1  + '%';
+                            }
+                        }
+                    }
+                </script>
+                <i class="fab fa-js-square"></i> JAVASCRIPT
+                <div class="myProgress">
+                    <div id="myBar7" class="myBar progress-bar-striped progress-bar-animated">30%</div>
+                </div>
+                <br/>
+
+
+<hr>
             </div>
-            <div class="col-lg-6">
+
+
+
+
+
+
+            <div class="col-lg-6" style="margin-top: 20px;">
+
                 <h4><span class="fab fa-weixin" aria-hidden="true"></span> Języki</h4>
-                <p>Język angielski
-                <div class="progress jezyk">
-                    <div class="progress-bar progress-bar-striped progress-bar-animated jezykbar" style="width:67%">B2</div>
+                Język angielski
+
+                    <script>
+                        function move5() {
+                            var elem = document.getElementById("myBar5");
+                            var width = 1;
+                            var id = setInterval(frame, 10);
+                            function frame() {
+                                if (width >= 67) {
+                                    clearInterval(id);
+                                } else {
+                                    width++;
+                                    elem.style.width = width + '%';
+
+                                }
+                            }
+                        }
+                    </script>
+
+                <div class="myProgress">
+                    <div id="myBar5" class="myBar progress-bar-striped progress-bar-animated">B2</div>
                 </div>
+
                 <br>
+
+
+            <script>
+                function move6() {
+                    var elem = document.getElementById("myBar6");
+                    var width = 1;
+                    var id = setInterval(frame, 10);
+                    function frame() {
+                        if (width >= 34) {
+                            clearInterval(id);
+                        } else {
+                            width++;
+                            elem.style.width = width + '%';
+
+                        }
+                    }
+                }
+            </script>
                 Język niemiecki
-                <div class="progress jezyk">
-                    <div class="progress-bar progress-bar-striped progress-bar-animated jezykbar" style="width:34%">A2</div>
-                </div>
-                </p></div>
-            <div class="col-lg-6">
-                <h4>Umiejętności dodatkowe</h4>
+            <div class="myProgress">
+                <div id="myBar6" class="myBar progress-bar-striped progress-bar-animated">A2</div>
+            </div>
+
+<br/>
+                <button onclick="move4();move();move1();move2();move3();move5();move6(); move7();">Sprawdź</button>
+            </div>
+
+
+            <div class="col-lg-6" style="margin-top: 20px;">
+                <h4><i class="fas fa-check"></i> Umiejętności dodatkowe</h4>
                 <ul>
                     <li>prawo jazdy kat. B</li>
                     <li>umiejętności manualne</li>
