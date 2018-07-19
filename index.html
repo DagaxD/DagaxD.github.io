@@ -74,15 +74,6 @@ function checkIfProgressBarsAreVisible(){
                 autoPlay: 'true',
                 autoPlayDirection: 'forward'
             })
-            $(window).on('hashchange', function(e) {
- 
- 				e.preventDefault();
-
- 				console.log("hashchange");
- 				console.log(e);
- 				return 1;
-			});
-
 
             $("a.nav-link").on('click', function(e) {
                 e.preventDefault();
@@ -95,7 +86,7 @@ function checkIfProgressBarsAreVisible(){
                 $('html, body').animate({
                     scrollTop: newTop
                 }, 300, function(){
-                    // window.location.hash = hash;
+                    window.location.hash = hash;
                 });
                 // prevent default anchor click behavior
                 return;
@@ -584,7 +575,7 @@ function checkIfProgressBarsAreVisible(){
             <div class="col-lg-4">
                 <div class="card" style="height:380px;">
                     <img class="card-img-top" src="images/6.png"
-                         style="padding-left:80px; padding-right:80px; padding-top:10px; padding-bottom:10px;"
+                         style="padding-top:10px; padding-bottom:10px;"
                          alt="Card image">
                     <div class="card-body">
                         <h4 class="card-title">IAI PHP CAMP #2</h4>
@@ -596,7 +587,7 @@ function checkIfProgressBarsAreVisible(){
             <div class="col-lg-4">
                 <div class="card">
                     <img class="card-img-top" src="images/udemy.jpg"
-                         style="padding-left:80px; padding-right:80px; padding-top:30px;" alt="Card image">
+                         style="padding-top:30px;" alt="Card image">
                     <div class="card-body">
                         <h4 class="card-title">Introduction to Databases and SQL Querying</h4>
                         <p class="card-text">Certyfikat ukończenia kursu</p>
