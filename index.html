@@ -54,6 +54,9 @@ function checkIfProgressBarsAreVisible(){
     if (isScrolledIntoView($("#myBar7")) && !window.moveStarted7) {
         move7();
     }
+    if (isScrolledIntoView($("#myBar8")) && !window.moveStarted8) {
+        move8();
+    }
 }
 
 
@@ -61,8 +64,20 @@ function checkIfProgressBarsAreVisible(){
            checkIfProgressBarsAreVisible();
             $(document).on("scroll", function () {
                 checkIfProgressBarsAreVisible();
-
             });
+
+            $(document).bind('scroll',function(e){
+                $('.navsection').each(function(){
+                    if (
+                        $(this).offset().top < window.pageYOffset + 10
+                        //begins before top
+                        && $(this).offset().top + $(this).height() > window.pageYOffset + 10
+                    ) {
+                        window.location.hash = $(this).attr('id');
+                    }
+                });
+            });
+
         });
 
         $(function () {
@@ -72,24 +87,24 @@ function checkIfProgressBarsAreVisible(){
             })
 
             $("a.nav-link[href^='#']").on('click', function(e) {
-                // prevent default anchor click behavior
                 e.preventDefault();
-
+                console.log("test click");
+                console.log(e);
                 // store hash
                 var hash = this.hash;
 
                 // animate
-                console.log($(hash).offset().top);
-                console.log($(hash).offset().top + 50.0);
-                var newTop = $(hash).offset().top  - 500;
+                var newTop = $(hash).offset().top  - 140;
+
                 $('html, body').animate({
                     scrollTop: newTop
                 }, 300, function(){
-
-                    // when done, add hash to url
-                    // (default click behaviour)
-                    window.location.hash = hash;
+                    // window.location.hash = hash;
                 });
+                // prevent default anchor click behavior
+                return;
+
+
 
             });
         });
@@ -186,7 +201,7 @@ function checkIfProgressBarsAreVisible(){
 
 <div class="container container-row">
 
-    <div id="omnie">
+    <div id="omnie" class="navsection">
         <h3 style="text-align: center;"><span class="fa fa-user" aria-hidden="true"></span> O mnie</h3><br/>
         <div class="row">
 
@@ -196,10 +211,10 @@ function checkIfProgressBarsAreVisible(){
 
             <div class="col-lg-6">
                 <br/>
-                <b>Poszukuję pracy jako:</b><br/> Junior Web Developer
+                <b><i class="fas fa-desktop"></i> Poszukuję pracy jako:</b><br/> Junior Web Developer
                 <hr>
-                <b>Data urodzenia:</b> <br/>03.02.1993<br/>
-                <b>Miejsce zamieszkania: </b> <br/>Szczecin<br/>
+                <b><i class="far fa-calendar-alt"></i> Data urodzenia:</b> <br/>03.02.1993<br/>
+                <b><i class="fas fa-map-marker-alt"></i> Miejsce zamieszkania: </b> <br/>Szczecin<br/>
             </div>
 
         </div>
@@ -209,8 +224,7 @@ function checkIfProgressBarsAreVisible(){
                 Jestem z zawodu nauczycielem matematyki, jednak od około 10 lat pasjonuję się tworzeniem stron
                 internetowych oraz blogów. Mam również doświadczenie w edycji sklepu internetowego na platformie
                 shoper.pl. Jako, że tworzenie jest nieodłączną częścią mojego życia, to i w dziedzinie programowania
-                bardzo chętnie uczę się i poznaję nowe możliwości, wykorzystując je w moich projektach. Często jestem
-                uparta, co niekiedy okazuje się być zaletą - nie poddaję się dopóki nie zobaczę zamierzonego efektu.
+                bardzo chętnie uczę się i poznaję nowe możliwości, wykorzystując je w moich projektach. Jak zabieram się za coś, to nie poddaję się dopóki nie zobaczę zamierzonego efektu.
             </div>
         </div>
         <div class="clear"></div>
@@ -218,9 +232,9 @@ function checkIfProgressBarsAreVisible(){
     </div>
 
 
-    <div id="wyksztalcenie">
-        <h3 style="text-align: center; margin-top:100px;"><span class="fas fa-graduation-cap" aria-hidden="true"></span>
-            Wykształcenie</h3>
+    <div id="wyksztalcenie" class="navsection">
+        <h3 style="text-align: center; margin-top:180px;"><span class="fas fa-graduation-cap" aria-hidden="true"></span>
+            Wykształcenie</h3><br/>
         <div class="row">
             <div class="col-lg-4">
                 <div class="card">
@@ -228,10 +242,10 @@ function checkIfProgressBarsAreVisible(){
                     <div class="card-body">
                         <h4 class="card-title">2015 - 2017</h4>
                         <hr>
-                        <p class="card-text">Uniwersytet Szczeciński<br/>Wydział Matematyczno-Fizyczny<br/><b>Studia
+                        <div class="card-text">Uniwersytet Szczeciński<br/>Wydział Matematyczno-Fizyczny<br/><b>Studia
                                 2-go stopnia</b><br/>
                         <hr>
-                        <b>Kierunek:</b> Matematyka<br/> <b>Specjalność:</b> Nauczycielska</p>
+                            <b>Kierunek:</b> Matematyka<br/> <b>Specjalność:</b> Nauczycielska</div>
                     </div>
                 </div>
             </div>
@@ -241,10 +255,10 @@ function checkIfProgressBarsAreVisible(){
                     <div class="card-body">
                         <h4 class="card-title">2015 - 2016</h4>
                         <hr>
-                        <p class="card-text">Wyższa Szkoła Bankowa w Poznaniu <br/>Wydział Ekonomiczny w Szczecinie<br/>
+                        <div class="card-text">Wyższa Szkoła Bankowa w Poznaniu <br/>Wydział Ekonomiczny w Szczecinie<br/>
                             <b>Studia podyplomowe</b>
                         <hr>
-                        <b>Kierunek:</b> <br/>Organizacja i Zarządzanie Oświatą</p>
+                        <b>Kierunek:</b> <br/>Organizacja i Zarządzanie Oświatą</div>
                     </div>
                 </div>
             </div>
@@ -255,10 +269,10 @@ function checkIfProgressBarsAreVisible(){
                     <div class="card-body">
                         <h4 class="card-title">2012 - 2015</h4>
                         <hr>
-                        <p class="card-text"> Uniwersytet Szczeciński<br/>Wydział Matematyczno-Fizyczny<br/><b>Studia
+                        <div class="card-text"> Uniwersytet Szczeciński<br/>Wydział Matematyczno-Fizyczny<br/><b>Studia
                                 1-go stopnia</b><br/>
                         <hr>
-                        <b>Kierunek:</b> Matematyka<br/> <b>Specjalność:</b> Nauczycielska</p>
+                        <b>Kierunek:</b> Matematyka<br/> <b>Specjalność:</b> Nauczycielska</div>
                     </div>
                 </div>
             </div>
@@ -266,9 +280,9 @@ function checkIfProgressBarsAreVisible(){
 
     </div>
     <br/>
-    <div id="doswiadczenie">
+    <div id="doswiadczenie" class="navsection">
         <h3 style="text-align: center; margin-top:100px;"><span class="fab fa-black-tie" aria-hidden="true"></span>
-            Doświadczenie</h3>
+            Doświadczenie</h3><br/>
         <div class="parallax"></div>
 
         <div class="container teacher">
@@ -291,7 +305,7 @@ function checkIfProgressBarsAreVisible(){
                 <div class="col-lg-4 zawod"><img src="2+2.png" style="width:166px;margin-bottom:20px;"><br/><b>11.2015 –
                         06.2016</b>
                     <hr>
-                    Korepetytor </br>w "Szkole Matematyki 2+2"
+                    Korepetytor <br/>w "Szkole Matematyki 2+2"
                 </div>
 
                 <br>
@@ -300,12 +314,12 @@ function checkIfProgressBarsAreVisible(){
         <div class="parallax"></div>
     </div>
 
-    <div id="umiejetnosci" >
+    <div id="umiejetnosci" class="navsection">
 
-        <h3 style="text-align: center;margin-top:270px; margin-bottom:40px;">
+        <h3 style="text-align: center;margin-top:300px; margin-bottom:40px;">
             <span class="fas fa-wrench" aria-hidden="true"></span>
             Umiejętności
-        </h3>
+        </h3><br/>
 
         <div class="row">
             <div class="col-lg-12">
@@ -322,7 +336,7 @@ function checkIfProgressBarsAreVisible(){
                             } else {
                                 width++;
                                 elem.style.width = width + '%';
-                                elem.innerHTML = width * 1  + '%';
+                                elem.innerHTML = width   + '%';
                             }
                         }
                     }
@@ -330,7 +344,7 @@ function checkIfProgressBarsAreVisible(){
 
 
 
-                <i class="fas fa-code"></i> HTML
+                <i class="fab fa-html5"></i> HTML
                 <div class="myProgress">
                     <div id="myBar" class="myBar progress-bar-striped progress-bar-animated">60%</div>
                 </div>
@@ -351,7 +365,7 @@ function checkIfProgressBarsAreVisible(){
                             } else {
                                 width++;
                                 elem.style.width = width + '%';
-                                elem.innerHTML = width * 1  + '%';
+                                elem.innerHTML = width   + '%';
                             }
                         }
                     }
@@ -376,7 +390,7 @@ function checkIfProgressBarsAreVisible(){
                             } else {
                                 width++;
                                 elem.style.width = width + '%';
-                                elem.innerHTML = width * 1  + '%';
+                                elem.innerHTML = width   + '%';
                             }
                         }
                     }
@@ -404,13 +418,13 @@ function checkIfProgressBarsAreVisible(){
                             } else {
                                 width++;
                                 elem.style.width = width + '%';
-                                elem.innerHTML = width * 1  + '%';
+                                elem.innerHTML = width   + '%';
                             }
                         }
                     }
                 </script>
 
-                <i class="fas fa-bold"></i> BOOTSTRAP
+                <i class="fas fa-code"></i> BOOTSTRAP
                 <div class="myProgress">
                     <div id="myBar3" class="myBar progress-bar-striped progress-bar-animated">40%</div>
                 </div>
@@ -432,12 +446,12 @@ function checkIfProgressBarsAreVisible(){
                             } else {
                                 width++;
                                 elem.style.width = width + '%';
-                                elem.innerHTML = width * 1  + '%';
+                                elem.innerHTML = width   + '%';
                             }
                         }
                     }
                 </script>
-                <i class="fab fa-quora"></i> JQUERY
+                <i class="fas fa-code"></i> JQUERY
                 <div class="myProgress">
                     <div id="myBar4" class="myBar progress-bar-striped progress-bar-animated">20%</div>
                 </div>
@@ -456,7 +470,7 @@ function checkIfProgressBarsAreVisible(){
                             } else {
                                 width++;
                                 elem.style.width = width + '%';
-                                elem.innerHTML = width * 1  + '%';
+                                elem.innerHTML = width   + '%';
                             }
                         }
                     }
@@ -467,6 +481,29 @@ function checkIfProgressBarsAreVisible(){
                 </div>
                 <br/>
 
+                <script>
+                    function move8() {
+                        window.moveStarted8 = 1;
+                        var elem = document.getElementById("myBar8");
+                        var width = 1;
+                        var id = setInterval(frame, 10);
+                        function frame() {
+                            if (width >= 30) {
+                                clearInterval(id);
+                            } else {
+                                width++;
+                                elem.style.width = width + '%';
+                                elem.innerHTML = width   + '%';
+                            }
+                        }
+                    }
+                </script>
+
+                <i class="fab fa-git"></i> GIT
+                <div class="myProgress">
+                    <div id="myBar8" class="myBar progress-bar-striped progress-bar-animated">30%</div>
+                </div>
+                <br>
 
 <hr>
             </div>
@@ -533,7 +570,7 @@ function checkIfProgressBarsAreVisible(){
 
 
             <div class="col-lg-6" style="margin-top: 20px;">
-                <h4><i class="fas fa-check"></i> Umiejętności dodatkowe</h4>
+                <h4><i class="fas fa-check"></i> Umiejętności dodatkowe</h4><br/>
                 <ul>
                     <li>prawo jazdy kat. B</li>
                     <li>umiejętności manualne</li>
@@ -544,10 +581,10 @@ function checkIfProgressBarsAreVisible(){
     </div>
 
 
-    <div id="certyfikaty">
+    <div id="certyfikaty" class="navsection">
         <h3 style="text-align: center; margin-top:100px; margin-bottom:30px;"><span class="fas fa-award" aria-hidden="true"></span>
             Certyfikaty
-        </h3>
+        </h3><br/>
         <div class="row">
             <div class="col-lg-2"></div>
             <div class="col-lg-4">
@@ -572,12 +609,13 @@ function checkIfProgressBarsAreVisible(){
                     </div>
                 </div>
             </div>
+            <div class="col-lg-2"></div>
         </div>
 
     </div>
 
-    <div class="publikacje" id="publikacje">
-        <h3 style="text-align: center;margin-top:100px;padding-bottom:20px;"><span class="fas fa-quote-left" aria-hidden="true"></span> Publikacje
+    <div class="publikacje navsection" id="publikacje">
+        <h3 style="text-align: center;margin-top:170px;padding-bottom:150px;"><span class="fas fa-quote-left" aria-hidden="true"></span> Publikacje
         </h3>
         <div class="row">
             <div class="col-lg-6 reveal">
@@ -600,9 +638,11 @@ function checkIfProgressBarsAreVisible(){
         </div>
     </div>
 
-    <div id="szkolenia">
-        <h3 style="text-align: center; margin-top:100px;"><span class="fas fa-university" aria-hidden="true"></span>
+    <div id="szkolenia" class="navsection">
+        <h3 style="text-align: center; margin-top:240px;"><span class="fas fa-university" aria-hidden="true"></span>
             Szkolenia</h3>
+        <div class="row">
+            <div class="col-lg-12">
         <div id="timeline">
             <ul id="dates">
 
@@ -630,15 +670,19 @@ function checkIfProgressBarsAreVisible(){
 
             </ul>
         </div>
+        </div>
+        </div>
 
         <div class="row">
             <div class="col-lg-12">
                 <div id="accordion">
 
                     <div class="card szkolenia">
-                        <div class="card-header">
+                        <div class="card-header" style="text-align: center;">
                             <a class="card-link" data-toggle="collapse" href="#collapseOne">
-                                Szkolenia pedagogiczne
+                                Szkolenia pedagogiczne <i class="fas fa-angle-down"></i>
+
+
                             </a>
                         </div>
                         <div id="collapseOne" class="collapse" data-parent="#accordion">
@@ -701,7 +745,7 @@ function checkIfProgressBarsAreVisible(){
         </div>
     </div>
 
-    <div id="dzialalnosc">
+    <div id="dzialalnosc" class="navsection">
         <h3 style="text-align: center; margin-top:100px; margin-bottom:30px;"><span class="fab fa-react" aria-hidden="true"></span>
             Działalność dodatkowa</h3>
 
@@ -846,8 +890,8 @@ function checkIfProgressBarsAreVisible(){
 
     </div>
 
-    <div id="hobby">
-        <h3 style="text-align: center; margin-top:100px; margin-bottom:40px;"><span class="fas fa-gamepad" aria-hidden="true"></span> Hobby
+    <div id="hobby" class="navsection">
+        <h3 style="text-align: center; margin-top:100px; margin-bottom:150px;"><span class="fas fa-gamepad" aria-hidden="true"></span> Hobby
         </h3>
         <div class="row reveal">
             <div class="col-lg-1"></div>
@@ -883,21 +927,28 @@ function checkIfProgressBarsAreVisible(){
 
     </div>
 
-    <div id="cv">
-        <h3 style="text-align: center; margin-top:100px; margin-bottom:30px;"><span class="fas fa-paperclip" aria-hidden="true"></span>
+    <div id="cv" class="navsection">
+        <h3 style="text-align: center; margin-top:150px; margin-bottom:170px;"><span class="fas fa-paperclip" aria-hidden="true"></span>
             Curriculum Vitae</h3>
+<div class="row">
+<div class="col-lg-1"></div>
+    <div class="col-lg-5">    <h5>Zachęcam do pobrania CV w wersji do druku - format pdf.</h5> <br/><a class="btn btn-lg btn-primary" href="#"><i class="far fa-file-pdf" style="font-size:50px; text-align: center"></i> Pobierz</a>
+        <br/></div>
+    <div class="col-lg-2">
 
-        <a class="btn btn-lg btn-primary" href="#"><i class="far fa-file-pdf" style="font-size:60px; text-align: center"></i> Pobierz</a>
+    </div>
+    <div class="col-lg-4">
+      <br/>  <i class="fas fa-download" style="font-size: 120px;"></i>
+    </div>
 
 
-
-        <br/>
+</div>
     </div>
 
 </div>
     <div class="contact bg-dark">
-        <div id="kontakt">
-            <h3 style="text-align: center; margin-top:100px; margin-bottom:30px; padding-top: 20px;">
+        <div id="kontakt" class="navsection">
+            <h3 style="text-align: center; margin-top:300px; margin-bottom:30px; padding-top: 20px;">
                 <span class="fas fa-envelope" aria-hidden="true"></span> Kontakt</h3>
             <script>
                 $(function () {
@@ -919,6 +970,7 @@ function checkIfProgressBarsAreVisible(){
                 <div class="row">
                     <div class="col-lg-7">
                         <form action="http://formspree.io/dagmaratega@gmail.com" method="POST" id="contactForm">
+                            <fieldset>
                             <legend>Napisz do mnie</legend>
                             <div class="control-group">
                                 <div class="controls">
@@ -931,7 +983,7 @@ function checkIfProgressBarsAreVisible(){
                             <div class="control-group">
                                 <div class="controls">
                                     <input type="email" class="form-control" placeholder="Email"
-                                           id="email" name="email" required/>
+                                           id="email" name="email" required>
                                 </div>
                             </div>
                             <br/>
@@ -944,15 +996,15 @@ function checkIfProgressBarsAreVisible(){
                             </div>
                             <div id="success"></div>
                             <br/>
-                            <input type="submit" class="btn btn-primary pull-right" value="Wyślij"></input>
-                            <br/>
+                            <input type="submit" class="btn btn-primary pull-right" value="Wyślij">
+                            <br/></fieldset>
                         </form>
                     </div>
 
                     <div class="col-lg-4 contact-info">
-                        <b>E-mail:</b> <br>dagmaratega@gmail.com<br>
+                        <b><i class="fas fa-at"></i> E-mail:</b> <br>dagmaratega@gmail.com<br>
                         <hr>
-                        <b>Telefon:</b><br>666 851 630<br>
+                        <b><i class="fas fa-phone"></i> Telefon:</b><br>666 851 630<br>
                     </div>
                 </div>
             </div>
