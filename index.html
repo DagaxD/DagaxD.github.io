@@ -66,17 +66,6 @@ function checkIfProgressBarsAreVisible(){
                 checkIfProgressBarsAreVisible();
             });
 
-            $(document).bind('scroll',function(e){
-                $('.navsection').each(function(){
-                    if (
-                        $(this).offset().top < window.pageYOffset + 10
-                        //begins before top
-                        && $(this).offset().top + $(this).height() > window.pageYOffset + 10
-                    ) {
-                        window.location.hash = $(this).attr('id');
-                    }
-                });
-            });
 
         });
 
@@ -85,16 +74,23 @@ function checkIfProgressBarsAreVisible(){
                 autoPlay: 'true',
                 autoPlayDirection: 'forward'
             })
+            $(window).on('hashchange', function(e) {
+ 
+ 				e.preventDefault();
 
-            $("a.nav-link[href^='#']").on('click', function(e) {
+ 				console.log("hashchange");
+ 				console.log(e);
+ 				return 1;
+			});
+
+
+            $("a.nav-link").on('click', function(e) {
                 e.preventDefault();
-                console.log("test click");
                 console.log(e);
-                // store hash
-                var hash = this.hash;
+                let hash = this.hash;
+                let navigationHash = hash.replace("#","#navigation-")
 
-                // animate
-                var newTop = $(hash).offset().top  - 140;
+                var newTop = $(navigationHash).offset().top  - 100;
 
                 $('html, body').animate({
                     scrollTop: newTop
@@ -104,9 +100,7 @@ function checkIfProgressBarsAreVisible(){
                 // prevent default anchor click behavior
                 return;
 
-
-
-            });
+			});
         });
 
     </script>
@@ -201,7 +195,7 @@ function checkIfProgressBarsAreVisible(){
 
 <div class="container container-row">
 
-    <div id="omnie" class="navsection">
+    <div id="navigation-omnie" class="navsection">
         <h3 style="text-align: center;"><span class="fa fa-user" aria-hidden="true"></span> O mnie</h3><br/>
         <div class="row">
 
@@ -232,7 +226,7 @@ function checkIfProgressBarsAreVisible(){
     </div>
 
 
-    <div id="wyksztalcenie" class="navsection">
+    <div id="navigation-wyksztalcenie" class="navsection">
         <h3 style="text-align: center; margin-top:180px;"><span class="fas fa-graduation-cap" aria-hidden="true"></span>
             Wykształcenie</h3><br/>
         <div class="row">
@@ -280,7 +274,7 @@ function checkIfProgressBarsAreVisible(){
 
     </div>
     <br/>
-    <div id="doswiadczenie" class="navsection">
+    <div id="navigation-doswiadczenie" class="navsection">
         <h3 style="text-align: center; margin-top:100px;"><span class="fab fa-black-tie" aria-hidden="true"></span>
             Doświadczenie</h3><br/>
         <div class="parallax"></div>
@@ -314,7 +308,7 @@ function checkIfProgressBarsAreVisible(){
         <div class="parallax"></div>
     </div>
 
-    <div id="umiejetnosci" class="navsection">
+    <div id="navigation-umiejetnosci" class="navsection">
 
         <h3 style="text-align: center;margin-top:300px; margin-bottom:40px;">
             <span class="fas fa-wrench" aria-hidden="true"></span>
@@ -581,7 +575,7 @@ function checkIfProgressBarsAreVisible(){
     </div>
 
 
-    <div id="certyfikaty" class="navsection">
+    <div id="navigation-certyfikaty" class="navsection">
         <h3 style="text-align: center; margin-top:100px; margin-bottom:30px;"><span class="fas fa-award" aria-hidden="true"></span>
             Certyfikaty
         </h3><br/>
@@ -614,7 +608,7 @@ function checkIfProgressBarsAreVisible(){
 
     </div>
 
-    <div class="publikacje navsection" id="publikacje">
+    <div id="navigation-publikacje" class="publikacje navsection">
         <h3 style="text-align: center;margin-top:170px;padding-bottom:150px;"><span class="fas fa-quote-left" aria-hidden="true"></span> Publikacje
         </h3>
         <div class="row">
@@ -638,7 +632,7 @@ function checkIfProgressBarsAreVisible(){
         </div>
     </div>
 
-    <div id="szkolenia" class="navsection">
+    <div id="navigation-szkolenia" class="navsection">
         <h3 style="text-align: center; margin-top:240px;"><span class="fas fa-university" aria-hidden="true"></span>
             Szkolenia</h3>
         <div class="row">
@@ -745,7 +739,7 @@ function checkIfProgressBarsAreVisible(){
         </div>
     </div>
 
-    <div id="dzialalnosc" class="navsection">
+    <div id="navigation-dzialalnosc" class="navsection">
         <h3 style="text-align: center; margin-top:100px; margin-bottom:30px;"><span class="fab fa-react" aria-hidden="true"></span>
             Działalność dodatkowa</h3>
 
@@ -890,7 +884,7 @@ function checkIfProgressBarsAreVisible(){
 
     </div>
 
-    <div id="hobby" class="navsection">
+    <div id="navigation-hobby" class="navsection">
         <h3 style="text-align: center; margin-top:100px; margin-bottom:150px;"><span class="fas fa-gamepad" aria-hidden="true"></span> Hobby
         </h3>
         <div class="row reveal">
@@ -927,7 +921,7 @@ function checkIfProgressBarsAreVisible(){
 
     </div>
 
-    <div id="cv" class="navsection">
+    <div id="navigation-cv" class="navsection">
         <h3 style="text-align: center; margin-top:150px; margin-bottom:170px;"><span class="fas fa-paperclip" aria-hidden="true"></span>
             Curriculum Vitae</h3>
 <div class="row">
@@ -947,7 +941,7 @@ function checkIfProgressBarsAreVisible(){
 
 </div>
     <div class="contact bg-dark">
-        <div id="kontakt" class="navsection">
+        <div id="navigation-kontakt" class="navsection">
             <h3 style="text-align: center; margin-top:300px; margin-bottom:30px; padding-top: 20px;">
                 <span class="fas fa-envelope" aria-hidden="true"></span> Kontakt</h3>
             <script>
