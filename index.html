@@ -75,6 +75,20 @@ function checkIfProgressBarsAreVisible(){
                 autoPlayDirection: 'forward'
             })
 
+	        $(document).bind('scroll',function(e){
+                $('.navsection').each(function(){
+                    if (
+                        $(this).offset().top < window.pageYOffset + 150 && $(this).offset().top + $(this).height() > window.pageYOffset + 150
+                    ) {
+
+    	                let navigationHash = $(this).attr('id').replace("navigation-","#")
+
+                        window.location.hash = navigationHash;
+                    }
+                });
+            });
+
+
             $("a.nav-link").on('click', function(e) {
                 e.preventDefault();
                 console.log(e);
