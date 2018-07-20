@@ -31,7 +31,7 @@
     display:block;
 }
 
-.card{
+.certyfikaty{
     max-width: 300px!important;
 }
 
@@ -120,7 +120,7 @@ padding-top: 15px;
 }
 
 #timeline {
-    width: 800px;
+
     height: 350px;
     overflow: hidden;
     margin: 100px auto;
@@ -128,7 +128,7 @@ padding-top: 15px;
     background: url('/images/dot.gif') left 45px repeat-x;
 }
 #dates {
-    width: 800px;
+
     height: 60px;
     overflow: hidden;
 }
@@ -230,7 +230,7 @@ padding-top: 15px;
     box-shadow: 0 5px 6px rgba(0,0,0,0.5);
 }
 .szkolenia{
-    width:700px;
+    width:600px;
     margin-left:auto;
     margin-right:auto;
     float:none;
