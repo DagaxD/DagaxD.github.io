@@ -686,11 +686,18 @@ function checkIfProgressBarsAreVisible(){
                 <div id="accordion">
 
                     <script>
-                        var szkol=document.getElementById("szkolenia");
 
                         function szkoleniaonclick() {
 
-                            szkol.style.width='900px';
+                            if($("#szkolenia").width() < 350) {
+                                $("#szkolenia").animate(
+                                    {"width": 700}
+                                );
+                            } else {
+                                $("#szkolenia").animate(
+                                    {"width": 300}
+                                );
+                            }
 
                         }
                     </script>

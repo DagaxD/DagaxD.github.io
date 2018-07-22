@@ -31,8 +31,12 @@
     display:block;
 }
 
-.card{
-    max-width: 300px!important;
+.card.certyfikaty{
+    max-width: 300px;
+}
+
+.card.szkolenia{
+    width:300px;
 }
 
 .card-img-top{
